@@ -1,5 +1,6 @@
 package it.prova.gestionesmartphoneapp.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
@@ -32,11 +33,11 @@ public class App {
 	
 	
 	@Column(name = "datainstallazione")
-	private LocalDateTime dataInstallazione;
+	private LocalDate dataInstallazione;
 	
 	
 	@Column(name = "dataultimoaggiornamento")
-	private LocalDateTime dataUltimoAggiornamento;
+	private LocalDate dataUltimoAggiornamento;
 
 	@Column(name = "versione")
 	private int versione;
@@ -52,7 +53,7 @@ public class App {
 	private Set<Smartphone> smartphones = new HashSet<Smartphone>();
 
 	
-	public App(Long id, String nome, LocalDateTime dataInstallazione, LocalDateTime dataUltimoAggiornamento,
+	public App(Long id, String nome, LocalDate dataInstallazione, LocalDate dataUltimoAggiornamento,
 			int versione) {
 		super();
 		this.id = id;
@@ -67,8 +68,17 @@ public class App {
 		
 	}
 
-
 	
+	
+
+
+	public App(String nome, LocalDate localDate, LocalDate localDate2, int versione) {
+		super();
+		this.nome = nome;
+		this.dataInstallazione = localDate;
+		this.dataUltimoAggiornamento = localDate2;
+		this.versione = versione;
+	}
 
 
 	public Long getId() {
@@ -91,22 +101,22 @@ public class App {
 	}
 
 
-	public LocalDateTime getDataInstallazione() {
+	public LocalDate getDataInstallazione() {
 		return dataInstallazione;
 	}
 
 
-	public void setDataInstallazione(LocalDateTime dataInstallazione) {
+	public void setDataInstallazione(LocalDate dataInstallazione) {
 		this.dataInstallazione = dataInstallazione;
 	}
 
 
-	public LocalDateTime getDataUltimoAggiornamento() {
+	public LocalDate getDataUltimoAggiornamento() {
 		return dataUltimoAggiornamento;
 	}
 
 
-	public void setDataUltimoAggiornamento(LocalDateTime dataUltimoAggiornamento) {
+	public void setDataUltimoAggiornamento(LocalDate dataUltimoAggiornamento) {
 		this.dataUltimoAggiornamento = dataUltimoAggiornamento;
 	}
 
